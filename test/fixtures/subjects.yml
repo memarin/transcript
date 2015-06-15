@@ -1,0 +1,12 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subject_name: MyString
+  subject_code: MyString
+  units: 1
+
+two:
+  subject_name: MyString
+  subject_code: MyString
+  units: 1

@@ -1,0 +1,21 @@
+.row
+  p
+    h2= "#{@course.course_code} - #{@course.course_name}"
+    hr
+
+.row
+  dl.dl-horizontal
+    dt Course Name
+    dd= @course.course_name
+
+    dt Course Code
+    dd= @course.course_code
+
+  hr
+
+  .btn-group
+    button type="button" class="btn btn-default"
+      = link_to 'Edit', edit_course_path(@course)
+
+    button type="button" class="btn btn-default"
+      = link_to 'Back', course_path

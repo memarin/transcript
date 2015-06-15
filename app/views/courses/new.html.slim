@@ -1,0 +1,11 @@
+h2 Add a New Course
+
+= simple_form_for @course,
+  input_html: { class: 'form-group' } do |f|
+
+  = f.input :course_name
+  = f.input :course_code
+
+  = f.button :submit, class: 'btn btn-primary'
+
+

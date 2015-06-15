@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Student Transcript System
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+    = render 'layouts/header'
+
+    .row
+      .col-md-2
+
+      .col-md-8
+        h1
+          span.label.label-default
+           | Student Transcript System
+
+        - flash.each do |message_type, message|
+          = content_tag(:div, message, class: "alert alert-#{message_type}")
+
+        = yield
+
+      .col-md-2
