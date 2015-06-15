@@ -39,7 +39,6 @@ class CoursesController < ApplicationController
     else
       render 'edit'
     end
-
   end
 
   def delete

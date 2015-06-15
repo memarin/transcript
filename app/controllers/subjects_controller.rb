@@ -1,7 +1,7 @@
 class SubjectsController < ApplicationController
   def index
     if params[:search]
-      @subject = Subject.where("subject_code LIKE ?", "%#{params[:search]}%")
+      @subjects = Subject.where("subject_code LIKE ?", "%#{params[:search]}%")
     end
   end
 
@@ -10,7 +10,30 @@ class SubjectsController < ApplicationController
   end
 
   def create
-    @subject = Subject.new()
+    @subject = Subject.new(subject_params)
+
+    if @subject.save
+      flash[:success] = 'Subject added'
+      redirect_to new_subject_path
+    else
+      flash[:warning] = 'Unable to add subject'
+      redirect_to new_subject_path
+    end
+  end
+
+  def edit
+    @subject = Subject.find(params[:id])
+  end
+
+  def update
+    @subject = Subject.find(params[:id])
+
+    if @subject.update_attributes(course_params)
+      flash[:success] = 'Course updated'
+      redirect_to subject_path(@subject)
+    else
+      render 'edit'
+    end
   end
 
   private

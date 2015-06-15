@@ -1,0 +1,24 @@
+.row
+  p
+    h2= "#{@subject.subject_code} - #{@subject.subject_name}"
+  hr
+
+.row
+  dl.dl-horizontal
+    dt Subject Name
+    dd= @course.course_name
+
+    dt Subject Code
+    dd= @course.course_code
+
+    dt Unit(s)
+    dd= @subject.units
+
+  hr
+
+  .btn-group
+    button type="button" class="btn btn-default"
+      = link_to 'Edit', edit_subject_path(@subject)
+
+    button type="button" class="btn btn-default"
+      = link_to 'Back', subjects_path
