@@ -1,0 +1,26 @@
+.row
+  p
+    =link_to 'Add Subject', new_subject_path class: 'btn btn-primary btn-lg active'
+
+.row
+  = form_tag subjects_path, :method => 'get' do
+    = text_field_tag :search
+    = submit_tag :search, :name => nil, :class => 'btn btn-primary btn-sm'
+
+.row
+  - if @subjects.present?
+    table.table.table-hover
+      thead
+        tr
+          th Subject Code
+          th Subject Name
+          th Unit(s)
+          th Action
+
+      tbody
+        - @subjects.each do |subject|
+            td= subject.subject_code
+            td= subject.subject_name
+            td= subject.units
+            td= link_to 'View', subject_path(subject)
+
