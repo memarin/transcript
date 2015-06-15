@@ -14,8 +14,9 @@ html
 
       .col-md-8
         h1
-          span.label.label-default
-           | Student Transcript System
+          center
+            span.label.label-default
+              | Student Transcript System
 
         - flash.each do |message_type, message|
           = content_tag(:div, message, class: "alert alert-#{message_type}")
