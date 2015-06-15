@@ -1,0 +1,10 @@
+h2 Add a New Subject
+
+= simple_form_for @subject,
+  input_html: { class: 'form-group' } do |f|
+
+  = f.input :subject_name
+  = f.input :subject_code
+  = f.input :units
+
+  = f.button :submit, class: 'btn btn-primary'
