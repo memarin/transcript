@@ -21,6 +21,10 @@ class SubjectsController < ApplicationController
     end
   end
 
+  def show
+    @subject = Subject.find(params[:id])
+  end
+
   def edit
     @subject = Subject.find(params[:id])
   end
@@ -28,7 +32,7 @@ class SubjectsController < ApplicationController
   def update
     @subject = Subject.find(params[:id])
 
-    if @subject.update_attributes(course_params)
+    if @subject.update_attributes(subject_params)
       flash[:success] = 'Course updated'
       redirect_to subject_path(@subject)
     else

@@ -1,0 +1,10 @@
+h2 Edit Subject
+
+= simple_form_for @subject,
+  input_html: { class: 'form-group' } do |f|
+
+  = f.input :subject_name, input_html: { value: @subject.subject_name }
+  = f.input :subject_code, input_html: { value: @subject.subject_code }
+  = f.input :units, input_html: { value: @subject.units }
+
+  = f.button :submit, class: 'btn btn-primary'

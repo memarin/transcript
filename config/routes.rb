@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'courses#index'
+  devise_for :users
+  root 'home#index'
   resources :courses
   resources :subjects
+  resources :users
 end
