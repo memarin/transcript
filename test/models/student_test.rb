@@ -1,4 +1,4 @@
 require "test_helper"
 
-describe HomeController do
+describe Student do
 end

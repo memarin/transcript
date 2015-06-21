@@ -3,10 +3,10 @@
 
 one:
   subject_name: MyString
-  subject_code: MyString
+  subject_code: one
   units: 1
 
 two:
   subject_name: MyString
-  subject_code: MyString
+  subject_code: two
   units: 1
