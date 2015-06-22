@@ -1,0 +1,13 @@
+h2 Add a New Student
+= simple_form_for @student,
+   input_html: {class: 'form-group'}  do |f|
+
+  = f.input :student_number, input_html: { class: 'form-control' }
+  = f.input :first_name, input_html: { class: 'form-control' }
+  = f.input :middle_name, input_html: { class: 'form-control' }
+  = f.input :last_name, input_html: { class: 'form-control' }
+  = f.input :address, input_html: { class: 'form-control' }
+  = f.input :birthday, input_html: { class: 'form-control' }
+  = f.input :birthplace, input_html: { class: 'form-control' }
+
+  = f.button :submit, class: 'btn btn-primary'

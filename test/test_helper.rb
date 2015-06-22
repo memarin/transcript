@@ -13,10 +13,13 @@ class ActiveSupport::TestCase
 
   def log_in_as(user)
     visit new_user_session_path
-    fill_in 'Email', with: 'memarin@me.com'
-    fill_in 'Password', with: 'mem10249'
+    fill_in('user_email', with: user.email)
+    fill_in 'Password', with: user.password
     click_button 'Log in'
-    assert page.has_content?('Signed in successfully.')
+  end
+
+  def user_object(email, password)
+    OpenStruct.new(:email => email, :password => password)
   end
 
 end

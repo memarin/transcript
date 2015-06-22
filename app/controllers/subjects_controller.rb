@@ -35,7 +35,7 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params[:id])
 
     if @subject.update_attributes(subject_params)
-      flash[:success] = 'Course updated'
+      flash[:success] = 'Subject updated'
       redirect_to subject_path(@subject)
     else
       render 'edit'

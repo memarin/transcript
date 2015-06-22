@@ -1,0 +1,25 @@
+.row
+  p
+    =link_to 'Add Student', new_student_path, class: 'btn btn-primary btn-lg active'
+
+.row
+  = form_tag students_path, :method => 'get' do
+    = text_field_tag :search
+    = submit_tag :search, :name => nil, :class => 'btn btn-primary btn-sm'
+
+.row
+  - if @students.present?
+    table.table.table-hover
+      thead
+        tr
+          th Student Number
+          th First Name
+          th Last Name
+          th Action
+
+      tbody
+        - @students.each do |student|
+            td= student.student_number
+            td= student.first_name
+            td= student.last_name
+            td= link_to 'View', student_path(student)

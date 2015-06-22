@@ -23,5 +23,5 @@ describe Subject do
     subject.subject_name = 'test'
     subject.units = nil
     assert_not subject.save
- end
+  end
 end
